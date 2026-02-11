@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ForceTest {
 
+
     @Test
     void testGetX() {
         Force f = new Force(7.0, 3.0);
