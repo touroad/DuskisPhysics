@@ -1,4 +1,4 @@
-package org.example;
+package duskis.physics;
 
 public class Force{
     double x;
@@ -33,7 +33,17 @@ public class Force{
     }
 
     public Force add(Force f){
-        return new Force(this.x + f.x, this.y + f.y);
+        return new Force(this.getX() + f.getX(), this.getY() + f.getY());
+    }
+
+    public Force normalize(){
+
+        return new Force(this.x/getMagnitude(),  this.y/getMagnitude());
+    }
+
+
+    public Force scale(double scale){
+        return new Force(this.x * scale, this.y * scale);
     }
 }
 
