@@ -37,15 +37,16 @@ class ForceTest {
         assertEquals(23.19, f.getDegrees(), 0.01);
     }
 
-    /*
     @Test
     void testAdd() {
         Force f = new Force(7.0, 3.0);
         Force f2 = new Force(-4.0, 12.0);
+        Force add = f.add(f2);
 
+        assertEquals(3, add.getX(), 0.01);
+        assertEquals(15, add.getY(), 0.01);
     }
 
-     */
 
     @Test
     void testNormalize() {
@@ -66,17 +67,15 @@ class ForceTest {
         assertEquals(30, scale.getY(), 0.01);
     }
 
-    /*
-
     @Test
-    void testGravity(){
+    void testGravity() {
         /* double perse = 47;
         double angle = 38;
         double y1 = (Math.cos(angle)) * perse;
         double x1 =  (Math.sin(angle)) * perse;
         System.out.println("x1: " + x1 + " y1: " + y1 + " perse: " + perse);
 
-         //
+         */
 
 
         Force gravity = new Force(0, -9.8);
@@ -86,7 +85,7 @@ class ForceTest {
         double y = 0.0;
         Force f1 = new Force(37.0365, 28.9360);
 
-        for(double i = 0; i < 5; i+= 0.1){
+        for (double i = 0; i < 5; i += 0.1) {
             f1 = f1.add(scaledGravity);
             Force scaledBall = f1.scale(0.1);
             x += scaledBall.getX();
@@ -94,6 +93,4 @@ class ForceTest {
             System.out.println("at " + i + " seconds the x is " + x + " the y is " + y);
         }
     }
-    */
-
 }
