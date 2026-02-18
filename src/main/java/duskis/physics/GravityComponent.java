@@ -9,24 +9,12 @@ public class GravityComponent extends JComponent {
     protected void paintComponent(Graphics g) {
         super.paintComponents(g);
 
-        Force gravity = new Force(0, -9.8);
-        Force scaledGravity = gravity.scale(0.1);
+        Projectile p = new Projectile(0, 0, new Force(37.065, 28.9360));
 
-        double x = 0.0;
-        double y = 0.0;
-        int x2;
-        int y2;
-
-        Force f1 = new Force(37.0365, 28.9360);
-
-        for (double t = 0; t < 5; t += 0.01) {
-            f1 = f1.add(scaledGravity);
-            Force scaledBall = f1.scale(0.1);
-            x += scaledBall.getX();
-            x2 = (int) Math.round(x);
-            y += scaledBall.getY();
-            y2 = (int) Math.round(y);
-            g.fillOval(x2, y2, 2, 2);
+        g.translate(0, getHeight());
+        for (double i = 0; i < 5; i += 0.001) {
+            p.apply(0.001);
+            g.fillOval((int) p.getX(), (int) -p.getY(), 2, 2);
         }
     }
 }
