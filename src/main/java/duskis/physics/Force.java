@@ -1,8 +1,8 @@
 package duskis.physics;
 
 public class Force {
-    double x;
-    double y;
+    private double x;
+    private double y;
 
     public Force(double x, double y) {
         this.x = x;

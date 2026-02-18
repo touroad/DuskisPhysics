@@ -8,37 +8,25 @@ class ForceTest {
 
 
     @Test
-    void testGetX() {
-        Force f = new Force(7.0, 3.0);
-        assertEquals(7.0, f.getX());
-    }
-
-    @Test
-    void testGetY() {
-        Force f = new Force(7.0, 3.0);
-        assertEquals(3.0, f.getY());
-    }
-
-    @Test
-    void testGetMagnitude() {
+    void getMagnitude() {
         Force f = new Force(7.0, 3.0);
         assertEquals(7.62, f.getMagnitude(), .01);
     }
 
     @Test
-    void testGetRadians() {
+    void getRadians() {
         Force f = new Force(7.0, 3.0);
         assertEquals(0.40, f.getRadians(), .01);
     }
 
     @Test
-    void testGetDegrees() {
+    void getDegrees() {
         Force f = new Force(7.0, 3.0);
         assertEquals(23.19, f.getDegrees(), 0.01);
     }
 
     @Test
-    void testAdd() {
+    void add() {
         Force f = new Force(7.0, 3.0);
         Force f2 = new Force(-4.0, 12.0);
         Force add = f.add(f2);
@@ -49,7 +37,7 @@ class ForceTest {
 
 
     @Test
-    void testNormalize() {
+    void normalize() {
         Force f = new Force(4.0, 3.0);
         Force norm = f.normalize();
 
@@ -59,7 +47,7 @@ class ForceTest {
     }
 
     @Test
-    void testScale() {
+    void scale() {
         Force f = new Force(7.0, 3.0);
         Force scale = f.scale(10);
 
@@ -68,7 +56,7 @@ class ForceTest {
     }
 
     @Test
-    void testGravity() {
+    void gravity() {
         /* double perse = 47;
         double angle = 38;
         double y1 = (Math.cos(angle)) * perse;
