@@ -83,7 +83,7 @@ class ForceTest {
     }
 
     @Test
-    void apply(){
+    void apply() {
         Force force = new Force(37.065, 28.936);
         Projectile p = new Projectile(0, 0, force);
         p.apply(0.001);

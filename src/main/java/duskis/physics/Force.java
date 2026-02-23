@@ -46,7 +46,7 @@ public class Force {
         return new Force(this.x * scale, this.y * scale);
     }
 
-    public String toString(){
+    public String toString() {
         return String.format("Force(%f, %f)", getX(), getY());
     }
 }

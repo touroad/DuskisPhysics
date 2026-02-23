@@ -12,7 +12,7 @@ public class GravityComponent extends JComponent {
         repaint();
     }
 
-    public void setTime(double time){
+    public void setTime(double time) {
         this.time = time;
         repaint();
     }
