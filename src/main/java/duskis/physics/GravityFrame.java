@@ -15,32 +15,33 @@ public class GravityFrame extends JFrame {
         setLayout(new BorderLayout());
 
         GravityComponent gravityComponent = new GravityComponent();
+        add(gravityComponent, BorderLayout.CENTER);
 
         JTextField xfield = new JTextField("37.065");
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
 
-        JLabel ForceX = new JLabel("Force X: ");
-        JLabel ForceY = new JLabel("Force Y: ");
-        JLabel Time = new JLabel("Time: ");
+        JLabel forceX = new JLabel("Force X: ");
+        JLabel forceY = new JLabel("Force Y: ");
+        JLabel time = new JLabel("Time: ");
 
         JButton button = new JButton("Draw");
 
         JPanel northPanel = new JPanel();
-        northPanel.add(ForceX);
+        northPanel.add(forceX);
         northPanel.add(xfield);
-        northPanel.add(ForceY);
+        northPanel.add(forceY);
         northPanel.add(yfield);
-        northPanel.add(Time);
+        northPanel.add(time);
         northPanel.add(timefield);
         northPanel.add(button);
 
-        JLabel Angle = new JLabel("Angle: ");
-        JLabel Magnitude = new JLabel("Magnitude: ");
-        northPanel.add(Angle);
-        northPanel.add(Magnitude);
-        Angle.setVisible(false);
-        Magnitude.setVisible(false);
+        JLabel angle = new JLabel("Angle: ");
+        JLabel magnitude = new JLabel("Magnitude: ");
+        northPanel.add(angle);
+        northPanel.add(magnitude);
+        angle.setVisible(false);
+        magnitude.setVisible(false);
         add(northPanel, BorderLayout.NORTH);
 
         button.addActionListener(new ActionListener() {
@@ -55,12 +56,10 @@ public class GravityFrame extends JFrame {
                         Double.parseDouble(timefield.getText())
                 );
 
-                Angle.setVisible(true);
-                Magnitude.setVisible(true);
+                angle.setVisible(true);
+                magnitude.setVisible(true);
             }
         });
-
-        add(gravityComponent, BorderLayout.CENTER);
     }
 
 
