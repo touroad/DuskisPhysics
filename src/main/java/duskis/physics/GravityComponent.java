@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class GravityComponent extends JComponent {
     private Force force = new Force(37.065, 28.9360);
-    double time = 5;
+    private double time = 5;
 
     public void setForce(Force force) {
         this.force = force;
