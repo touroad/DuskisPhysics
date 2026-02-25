@@ -81,4 +81,14 @@ class ForceTest {
             System.out.println("at " + i + " seconds the x is " + x + " the y is " + y);
         }
     }
+
+    @Test
+    void apply() {
+        Force force = new Force(37.065, 28.936);
+        Projectile p = new Projectile(0, 0, force);
+        p.apply(0.001);
+
+        assertEquals(0.037065, p.getX(), 0.0001);
+        assertEquals(0.028926, p.getY(), 0.0001);
+    }
 }
