@@ -2,8 +2,7 @@ package duskis.physics;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class GravityFrame extends JFrame {
 
@@ -14,12 +13,63 @@ public class GravityFrame extends JFrame {
 
         setLayout(new BorderLayout());
 
-        GravityComponent gravityComponent = new GravityComponent();
-        add(gravityComponent, BorderLayout.CENTER);
-
         JTextField xfield = new JTextField("37.065");
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
+
+        GravityComponent gravityComponent = new GravityComponent();
+        gravityComponent.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                gravityComponent.setForce(
+                        new Force(
+                                e.getX(), gravityComponent.getHeight() -e.getY()
+                        )
+                );
+                xfield.setText(String.valueOf(e.getX()));
+                yfield.setText(String.valueOf(e.getX()));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+        gravityComponent.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                gravityComponent.setForce(
+                        new Force(e.getX(), gravityComponent.getHeight() -e.getY()
+                        )
+                );
+
+                xfield.setText(String.valueOf(e.getX()));
+                yfield.setText(String.valueOf(e.getX()));
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+        });
+
+        add(gravityComponent, BorderLayout.CENTER);
 
         JLabel forceX = new JLabel("Force X: ");
         JLabel forceY = new JLabel("Force Y: ");
