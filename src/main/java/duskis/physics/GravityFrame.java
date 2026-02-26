@@ -18,16 +18,12 @@ public class GravityFrame extends JFrame {
         JTextField timefield = new JTextField("5");
 
         GravityComponent gravityComponent = new GravityComponent();
+        GravityController gravityController = new GravityController();
+
         gravityComponent.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                gravityComponent.setForce(
-                        new Force(
-                                e.getX(), gravityComponent.getHeight() -e.getY()
-                        )
-                );
-                xfield.setText(String.valueOf(e.getX()));
-                yfield.setText(String.valueOf(e.getX()));
+                gravityController.updateForce(e.getX(), gravityComponent.getHeight() -e.getY());
             }
 
             @Override
