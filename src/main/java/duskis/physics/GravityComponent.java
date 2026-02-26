@@ -26,7 +26,7 @@ public class GravityComponent extends JComponent {
         g.translate(0, getHeight());
         for (double i = 0; i < time; i += 0.001) {
             p.apply(0.001);
-            System.out.println(p.getX() + " " + p.getY() + " " + p.getForce());
+            //System.out.println(p.getX() + " " + p.getY() + " " + p.getForce());
             g.fillOval((int) p.getX(), (int) -p.getY(), 2, 2);
         }
 

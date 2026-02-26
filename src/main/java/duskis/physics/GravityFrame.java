@@ -19,16 +19,22 @@ public class GravityFrame extends JFrame {
 
         GravityComponent gravityComponent = new GravityComponent();
         GravityController gravityController = new GravityController();
+        gravityController.gravityComponent = gravityComponent;
+        gravityController.xfield = xfield;
+        gravityController.yfield = yfield;
+        gravityController.timefield = timefield;
 
         gravityComponent.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                gravityController.updateForce(e.getX(), gravityComponent.getHeight() -e.getY());
+                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() -e.getY()));
+                System.out.printf("mouse clicked: x = %d, y = %d, height = %d\n", e.getX(), e.getY(), gravityComponent.getHeight());
+
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
+                System.out.println("mouse pressed");
             }
 
             @Override
@@ -56,7 +62,8 @@ public class GravityFrame extends JFrame {
                 );
 
                 xfield.setText(String.valueOf(e.getX()));
-                yfield.setText(String.valueOf(e.getX()));
+                yfield.setText(String.valueOf(e.getY()));
+                System.out.printf("mouse clicked: x = %d, y = %d, height = %d\n", e.getX(), e.getY(), gravityComponent.getHeight());
             }
 
             @Override
