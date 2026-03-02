@@ -26,11 +26,11 @@ public class GravityComponent extends JComponent {
 
         Color lBlue = new Color(167, 199, 231);
         g.setColor(lBlue);
-        for(int i = 20; i <= getWidth(); i += 20 ){
-            g.drawLine(i, 0, i , getHeight());
+        for (int i = 20; i <= getWidth(); i += 20) {
+            g.drawLine(i, 0, i, getHeight());
         }
 
-        for(int i = 0; i <= getHeight(); i += 20 ){
+        for (int i = 0; i <= getHeight(); i += 20) {
             g.drawLine(0, i, getWidth(), i);
         }
 

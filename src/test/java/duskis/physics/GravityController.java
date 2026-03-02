@@ -14,13 +14,13 @@ public class GravityController {
     JLabel angle;
     JLabel magnitude;
 
-    public void updateForce(double x, double y){
+    public void updateForce(double x, double y) {
         gravityComponent.setForce(new Force(x, y));
         xfield.setText(String.valueOf(x));
         yfield.setText(String.valueOf(y));
     }
 
-    public void updateButton(double  x, double  y, double time){
+    public void updateButton(double x, double y, double time) {
         gravityComponent.setForce(new Force(x, y));
         gravityComponent.setTime(time);
     }

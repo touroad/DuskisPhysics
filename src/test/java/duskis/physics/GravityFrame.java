@@ -27,7 +27,7 @@ public class GravityFrame extends JFrame {
         gravityComponent.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() -e.getY()));
+                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() - e.getY()));
             }
 
             @Override
@@ -54,7 +54,7 @@ public class GravityFrame extends JFrame {
         gravityComponent.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() -e.getY()));
+                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() - e.getY()));
             }
 
             @Override
@@ -92,10 +92,10 @@ public class GravityFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 gravityController.updateButton(
-                                Double.parseDouble(xfield.getText()),
-                                Double.parseDouble(yfield.getText()),
-                                Double.parseDouble(timefield.getText())
-                        );
+                        Double.parseDouble(xfield.getText()),
+                        Double.parseDouble(yfield.getText()),
+                        Double.parseDouble(timefield.getText())
+                );
                 angle.setVisible(true);
                 magnitude.setVisible(true);
             }
