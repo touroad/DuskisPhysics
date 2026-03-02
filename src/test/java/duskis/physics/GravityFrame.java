@@ -28,8 +28,6 @@ public class GravityFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 gravityController.updateForce(e.getX(), (gravityComponent.getHeight() -e.getY()));
-                System.out.printf("mouse clicked: x = %d, y = %d, height = %d\n", e.getX(), e.getY(), gravityComponent.getHeight());
-
             }
 
             @Override
@@ -56,14 +54,7 @@ public class GravityFrame extends JFrame {
         gravityComponent.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                gravityComponent.setForce(
-                        new Force(e.getX(), gravityComponent.getHeight() -e.getY()
-                        )
-                );
-
-                xfield.setText(String.valueOf(e.getX()));
-                yfield.setText(String.valueOf(e.getY()));
-                System.out.printf("mouse clicked: x = %d, y = %d, height = %d\n", e.getX(), e.getY(), gravityComponent.getHeight());
+                gravityController.updateForce(e.getX(), (gravityComponent.getHeight() -e.getY()));
             }
 
             @Override
@@ -100,15 +91,11 @@ public class GravityFrame extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gravityComponent.setForce(
-                        new Force(
+                gravityController.updateButton(
                                 Double.parseDouble(xfield.getText()),
-                                Double.parseDouble(yfield.getText())
-                        ));
-                gravityComponent.setTime(
-                        Double.parseDouble(timefield.getText())
-                );
-
+                                Double.parseDouble(yfield.getText()),
+                                Double.parseDouble(timefield.getText())
+                        );
                 angle.setVisible(true);
                 magnitude.setVisible(true);
             }
