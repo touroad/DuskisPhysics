@@ -24,8 +24,8 @@ public class GravityComponent extends JComponent {
 
         Projectile p = new Projectile(0, 0, force);
 
-        Color lBlue = new Color(167, 199, 231);
-        g.setColor(lBlue);
+        Color lightBlue = new Color(167, 199, 231);
+        g.setColor(lightBlue);
         for (int i = 20; i <= getWidth(); i += 20) {
             g.drawLine(i, 0, i, getHeight());
         }

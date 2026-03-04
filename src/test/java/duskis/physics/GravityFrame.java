@@ -17,12 +17,25 @@ public class GravityFrame extends JFrame {
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
 
+        JLabel forceX = new JLabel("Force X: ");
+        JLabel forceY = new JLabel("Force Y: ");
+        JLabel time = new JLabel("Time: ");
+
+        JLabel angle = new JLabel("Angle: ");
+        JLabel magnitude = new JLabel("Magnitude: ");
+
         GravityComponent gravityComponent = new GravityComponent();
-        GravityController gravityController = new GravityController();
-        gravityController.gravityComponent = gravityComponent;
-        gravityController.xfield = xfield;
-        gravityController.yfield = yfield;
-        gravityController.timefield = timefield;
+        GravityController gravityController = new GravityController(
+                gravityComponent,
+                xfield,
+                yfield,
+                timefield,
+                forceX,
+                forceY,
+                time,
+                angle,
+                magnitude);
+
 
         gravityComponent.addMouseListener(new MouseListener() {
             @Override
@@ -65,10 +78,6 @@ public class GravityFrame extends JFrame {
 
         add(gravityComponent, BorderLayout.CENTER);
 
-        JLabel forceX = new JLabel("Force X: ");
-        JLabel forceY = new JLabel("Force Y: ");
-        JLabel time = new JLabel("Time: ");
-
         JButton button = new JButton("Draw");
 
         JPanel northPanel = new JPanel();
@@ -80,8 +89,6 @@ public class GravityFrame extends JFrame {
         northPanel.add(timefield);
         northPanel.add(button);
 
-        JLabel angle = new JLabel("Angle: ");
-        JLabel magnitude = new JLabel("Magnitude: ");
         northPanel.add(angle);
         northPanel.add(magnitude);
         angle.setVisible(false);
