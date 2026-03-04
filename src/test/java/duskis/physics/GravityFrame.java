@@ -98,7 +98,7 @@ public class GravityFrame extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gravityController.updateButton(
+                gravityController.updateButtonInput(
                         Double.parseDouble(xfield.getText()),
                         Double.parseDouble(yfield.getText()),
                         Double.parseDouble(timefield.getText())
