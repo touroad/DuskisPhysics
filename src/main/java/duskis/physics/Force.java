@@ -47,7 +47,7 @@ public class Force {
     }
 
     public String toString() {
-        return String.format("Force(%f, %f)", getX(), getY());
+        return String.format("duskis.physics.Force(%f, %f)", getX(), getY());
     }
 }
 

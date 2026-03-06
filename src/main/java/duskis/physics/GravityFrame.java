@@ -17,8 +17,8 @@ public class GravityFrame extends JFrame {
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
 
-        JLabel forceX = new JLabel("Force X: ");
-        JLabel forceY = new JLabel("Force Y: ");
+        JLabel forceX = new JLabel("duskis.physics.Force X: ");
+        JLabel forceY = new JLabel("duskis.physics.Force Y: ");
         JLabel time = new JLabel("Time: ");
 
         JLabel angle = new JLabel("Angle: ");
@@ -107,6 +107,22 @@ public class GravityFrame extends JFrame {
                 magnitude.setVisible(true);
             }
         });
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                    gravityComponent.repaint();
+                    try {
+                        Thread.sleep(1);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 
 

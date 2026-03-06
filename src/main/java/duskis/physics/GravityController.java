@@ -36,7 +36,6 @@ public class GravityController {
         this.magnitude = magnitude;
     }
 
-
     public void updateForce(double x, double y) {
         gravityComponent.setForce(new Force(x, y));
         xfield.setText(String.valueOf(x));
