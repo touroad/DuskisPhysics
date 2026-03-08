@@ -44,5 +44,8 @@ public class GravityComponent extends JComponent {
 
         g.setColor(Color.green);
         g.drawLine(0, 0, (int) force.getX(), (int) -force.getY());
+
+        g.setColor(Color.magenta);
+        g.fillOval((int) p.getApexX(), (int) -p.getApexY(), 80, 80);
     }
 }

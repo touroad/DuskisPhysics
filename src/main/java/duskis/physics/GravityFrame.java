@@ -17,12 +17,13 @@ public class GravityFrame extends JFrame {
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
 
-        JLabel forceX = new JLabel("duskis.physics.Force X: ");
-        JLabel forceY = new JLabel("duskis.physics.Force Y: ");
+        JLabel forceX = new JLabel("Force X: ");
+        JLabel forceY = new JLabel(" Y: ");
         JLabel time = new JLabel("Time: ");
 
         JLabel angle = new JLabel("Angle: ");
         JLabel magnitude = new JLabel("Magnitude: ");
+        JLabel apex = new JLabel("Apex: ");
 
         GravityComponent gravityComponent = new GravityComponent();
         GravityController gravityController = new GravityController(

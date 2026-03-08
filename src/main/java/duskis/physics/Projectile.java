@@ -21,6 +21,14 @@ public class Projectile {
         y += scaledForce.getY();
     }
 
+    public double getApexY(){
+        return (y * y) / (2 * Gravity.getY());
+    }
+
+    public double getApexX(){
+        return (x * y) / (Gravity.getY());
+    }
+
     public double getX() {
         return x;
     }

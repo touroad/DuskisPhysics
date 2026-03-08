@@ -26,7 +26,7 @@ class GravityControllerTest {
 
         verify(gravityComponent).setForce(new Force(7, 5));
         verify(xfield).setText("7.0");
-        verify(yfield).setText("7.0");
+        verify(yfield).setText("5.0");
     }
 
     @Test
@@ -44,7 +44,7 @@ class GravityControllerTest {
 
         GravityController controller = new GravityController(gravityComponent, xfield, yfield, timefield, forceX, forceY, time, angle, magnitude);
 
-        controller.updateForce(7, 5);
+        controller.updateButtonInput(7, 5, 5);
 
         verify(gravityComponent).setForce(new Force(7, 5));
         verify(gravityComponent).setTime(5);

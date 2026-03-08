@@ -13,6 +13,7 @@ public class GravityController {
     private JLabel time;
     private JLabel angle;
     private JLabel magnitude;
+    private JLabel apex;
 
     public GravityController(
             GravityComponent gravityComponent,
