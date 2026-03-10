@@ -16,6 +16,7 @@ public class GravityFrame extends JFrame {
         JTextField xfield = new JTextField("37.065");
         JTextField yfield = new JTextField("28.9360");
         JTextField timefield = new JTextField("5");
+        JTextField apexfield = new JTextField("109.44, 42.71");
 
         JLabel forceX = new JLabel("Force X: ");
         JLabel forceY = new JLabel(" Y: ");
@@ -31,12 +32,13 @@ public class GravityFrame extends JFrame {
                 xfield,
                 yfield,
                 timefield,
+                apexfield,
                 forceX,
                 forceY,
                 time,
+                apex,
                 angle,
                 magnitude);
-
 
         gravityComponent.addMouseListener(new MouseListener() {
             @Override
@@ -46,7 +48,7 @@ public class GravityFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println("mouse pressed");
+
             }
 
             @Override
@@ -88,6 +90,8 @@ public class GravityFrame extends JFrame {
         northPanel.add(yfield);
         northPanel.add(time);
         northPanel.add(timefield);
+        northPanel.add(apex);
+        northPanel.add(apexfield);
         northPanel.add(button);
 
         northPanel.add(angle);
@@ -112,7 +116,7 @@ public class GravityFrame extends JFrame {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                while(true) {
+                while (true) {
                     gravityComponent.repaint();
                     try {
                         Thread.sleep(1);

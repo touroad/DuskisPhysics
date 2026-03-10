@@ -7,6 +7,7 @@ public class GravityController {
     private JTextField xfield;
     private JTextField yfield;
     private JTextField timefield;
+    private JTextField apexfield;
 
     private JLabel forceX;
     private JLabel forceY;
@@ -20,9 +21,11 @@ public class GravityController {
             JTextField xfield,
             JTextField yfield,
             JTextField timefield,
+            JTextField apexfield,
             JLabel forceX,
             JLabel forceY,
             JLabel time,
+            JLabel apex,
             JLabel angle,
             JLabel magnitude
     ) {
@@ -30,9 +33,11 @@ public class GravityController {
         this.xfield = xfield;
         this.yfield = yfield;
         this.timefield = timefield;
+        this.apexfield = apexfield;
         this.forceX = forceX;
         this.forceY = forceY;
         this.time = time;
+        this.apex = apex;
         this.angle = angle;
         this.magnitude = magnitude;
     }
@@ -41,10 +46,16 @@ public class GravityController {
         gravityComponent.setForce(new Force(x, y));
         xfield.setText(String.valueOf(x));
         yfield.setText(String.valueOf(y));
+        Projectile temp = new Projectile(0, 0, new Force(x, y));
+        apexfield.setText(String.format("%.2f", temp.getApexX()) + ", " + String.format("%.2f", temp.getApexY()));  //definitly need to format this, apex numbers are longg
     }
 
     public void updateButtonInput(double x, double y, double time) {
         gravityComponent.setForce(new Force(x, y));
+        xfield.setText(String.valueOf(x));
+        yfield.setText(String.valueOf(y));
+        Projectile temp = new Projectile(0, 0, new Force(x, y));
+        apexfield.setText(String.format("%.2f", temp.getApexX()) + ", " + String.format("%.2f", temp.getApexY()));
         gravityComponent.setTime(time);
     }
 }

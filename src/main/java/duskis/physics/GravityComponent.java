@@ -8,10 +8,14 @@ public class GravityComponent extends JComponent {
     private Force force = new Force(37.065, 28.9360);
     Projectile p = new Projectile(0, 0, force);
     private double time = 5;
+    private double apexX = p.getApexX();
+    private double apexY = p.getApexY();
 
     public void setForce(Force force) {
         this.force = force;
         p = new Projectile(0, 0, force);
+        apexX = p.getApexX();
+        apexY = p.getApexY();
         repaint();
     }
 
@@ -22,7 +26,7 @@ public class GravityComponent extends JComponent {
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponents(g);
+        super.paintComponent(g);
 
         Color lightBlue = new Color(167, 199, 231);
         g.setColor(lightBlue);
@@ -38,14 +42,14 @@ public class GravityComponent extends JComponent {
         g.translate(0, getHeight());
 
         //for (double i = 0; i < time; i += 0.001) {
-            p.apply(0.01);
-            g.fillOval((int) p.getX(), (int) -p.getY(), 20, 20);
+        p.apply(0.01);
+        g.fillOval((int) p.getX(), (int) -p.getY(), 20, 20);
         //}
 
         g.setColor(Color.green);
         g.drawLine(0, 0, (int) force.getX(), (int) -force.getY());
 
         g.setColor(Color.magenta);
-        g.fillOval((int) p.getApexX(), (int) -p.getApexY(), 80, 80);
+        g.fillOval((int) apexX, (int) -apexY, 10, 10);
     }
 }
