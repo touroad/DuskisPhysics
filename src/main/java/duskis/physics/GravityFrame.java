@@ -11,7 +11,7 @@ public class GravityFrame extends JFrame {
         setTitle("Gravity Frames");
         setDefaultCloseOperation(EXIT_ON_CLOSE); //IMPORTANT, thus tells it to close when you hit the x button
 
-        setLayout(new BorderLayout());
+        setLayout(new GridBagLayout());
 
         JTextField xfield = new JTextField("37.065");
         JTextField yfield = new JTextField("28.9360");
@@ -79,11 +79,8 @@ public class GravityFrame extends JFrame {
             }
         });
 
-        add(gravityComponent, BorderLayout.CENTER);
-
         JButton button = new JButton("Draw");
 
-        JPanel westPanel = new JPanel(new GridBagLayout());
         GridBagConstraints constraints;
 
         constraints = new GridBagConstraints();
@@ -91,68 +88,77 @@ public class GravityFrame extends JFrame {
         constraints.gridy = 0;
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
-        westPanel.add(forceX, constraints);
+        add(forceX, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
         constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
-        westPanel.add(xfield, constraints);
+        add(xfield, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 1;
-        westPanel.add(forceY, constraints);
+        add(forceY, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 1;
-        westPanel.add(yfield, constraints);
+        add(yfield, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 2;
-        westPanel.add(time, constraints);
+        add(time, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 2;
-        westPanel.add(timefield, constraints);
+        add(timefield, constraints);
 
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 3;
         constraints.gridwidth = 2;
-        westPanel.add(angle, constraints);
+        add(angle, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 4;
         constraints.gridwidth = 2;
-        westPanel.add(magnitude, constraints);
+        add(magnitude, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 5;
-        westPanel.add(apex, constraints);
+        add(apex, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 5;
-        westPanel.add(apexfield, constraints);
+        add(apexfield, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 6;
         constraints.gridwidth = 2;
-        westPanel.add(button, constraints);
+        constraints.anchor = GridBagConstraints.NORTH;
+        add(button, constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 2;
+        constraints.gridy = 0;
+        constraints.gridheight = 7;
+        constraints.weightx = 1;
+        constraints.weighty = 1;
+        constraints.fill = GridBagConstraints.BOTH;
+        add(gravityComponent, constraints);
 
 
         angle.setVisible(false);
         magnitude.setVisible(false);
-        add(westPanel, BorderLayout.WEST);
 
         button.addActionListener(new ActionListener() {
             @Override
