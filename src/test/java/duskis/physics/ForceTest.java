@@ -2,9 +2,6 @@ package duskis.physics;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
-import javax.swing.*;
 
 class ForceTest {
 
@@ -33,8 +30,8 @@ class ForceTest {
         Force f2 = new Force(-4.0, 12.0);
         Force add = f.add(f2);
 
-        Assertions.assertEquals(3, add.getX(), 0.01);
-        Assertions.assertEquals(15, add.getY(), 0.01);
+        Assertions.assertEquals(3, add.x(), 0.01);
+        Assertions.assertEquals(15, add.y(), 0.01);
     }
 
 
@@ -44,8 +41,8 @@ class ForceTest {
         Force norm = f.normalize();
 
         Assertions.assertEquals(1, norm.getMagnitude(), 0.01);
-        Assertions.assertEquals(0.8, norm.getX(), 0.01);
-        Assertions.assertEquals(0.6, norm.getY(), 0.01);
+        Assertions.assertEquals(0.8, norm.x(), 0.01);
+        Assertions.assertEquals(0.6, norm.y(), 0.01);
     }
 
     @Test
@@ -53,8 +50,8 @@ class ForceTest {
         Force f = new Force(7.0, 3.0);
         Force scale = f.scale(10);
 
-        Assertions.assertEquals(70, scale.getX(), 0.01);
-        Assertions.assertEquals(30, scale.getY(), 0.01);
+        Assertions.assertEquals(70, scale.x(), 0.01);
+        Assertions.assertEquals(30, scale.y(), 0.01);
     }
 
     @Test
@@ -78,8 +75,8 @@ class ForceTest {
         for (double i = 0; i < 5; i += 0.1) {
             f1 = f1.add(scaledGravity);
             Force scaledBall = f1.scale(0.1);
-            x += scaledBall.getX();
-            y += scaledBall.getY();
+            x += scaledBall.x();
+            y += scaledBall.y();
             System.out.println("at " + i + " seconds the x is " + x + " the y is " + y);
         }
     }

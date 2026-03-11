@@ -2,7 +2,6 @@ package duskis.physics;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
 
 public class GravityComponent extends JComponent {
     private Force force = new Force(37.065, 28.9360);
@@ -47,7 +46,7 @@ public class GravityComponent extends JComponent {
         //}
 
         g.setColor(Color.green);
-        g.drawLine(0, 0, (int) force.getX(), (int) -force.getY());
+        g.drawLine(0, 0, (int) force.x(), (int) -force.y());
 
         g.setColor(Color.magenta);
         g.fillOval((int) apexX, (int) -apexY, 10, 10);

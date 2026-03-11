@@ -3,18 +3,18 @@ package duskis.physics;
 import javax.swing.*;
 
 public class GravityController {
-    private GravityComponent gravityComponent;
-    private JTextField xfield;
-    private JTextField yfield;
-    private JTextField timefield;
-    private JTextField apexfield;
+    private final GravityComponent gravityComponent;
+    private final JTextField xfield;
+    private final JTextField yfield;
+    private final JTextField timefield;
+    private final JTextField apexfield;
 
-    private JLabel forceX;
-    private JLabel forceY;
-    private JLabel time;
-    private JLabel angle;
-    private JLabel magnitude;
-    private JLabel apex;
+    private final JLabel forceX;
+    private final JLabel forceY;
+    private final JLabel time;
+    private final JLabel angle;
+    private final JLabel magnitude;
+    private final JLabel apex;
 
     public GravityController(
             GravityComponent gravityComponent,

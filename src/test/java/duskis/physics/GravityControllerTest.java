@@ -85,7 +85,6 @@ class GravityControllerTest {
         JTextField yfield = mock();
         JTextField timefield = mock();
         JTextField apexfield = mock();
-        doReturn("3.57, 1.28").when(apexfield).getText();
         JLabel forceX = mock();
         JLabel forceY = mock();
         JLabel time = mock();

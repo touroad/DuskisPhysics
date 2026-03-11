@@ -17,19 +17,19 @@ public class Projectile {
         Force scaledGravity = Gravity.scale(time);
         force = force.add(scaledGravity);
         Force scaledForce = force.scale(time);
-        x += scaledForce.getX();
-        y += scaledForce.getY();
+        x += scaledForce.x();
+        y += scaledForce.y();
     }
 
     public double getApexY() {
-        double y = force.getY();
-        return (y * y) / (2 * -Gravity.getY());
+        double y = force.y();
+        return (y * y) / (2 * -Gravity.y());
     }
 
     public double getApexX() {
-        double y = force.getY();
-        double x = force.getX();
-        return (x * y) / (-Gravity.getY());
+        double y = force.y();
+        double x = force.x();
+        return (x * y) / (-Gravity.y());
     }
 
     public double getX() {

@@ -1,23 +1,6 @@
 package duskis.physics;
 
-import java.util.Objects;
-
-public class Force {
-    private double x;
-    private double y;
-
-    public Force(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
-    }
+public record Force(double x, double y) {
 
     public double getMagnitude() {
         double square1 = x * x;
@@ -35,7 +18,7 @@ public class Force {
     }
 
     public Force add(Force f) {
-        return new Force(this.getX() + f.getX(), this.getY() + f.getY());
+        return new Force(this.x() + f.x(), this.y() + f.y());
     }
 
     public Force normalize() {
@@ -49,19 +32,17 @@ public class Force {
     }
 
     public String toString() {
-        return String.format("Force(%f, %f)", getX(), getY());
+        return String.format("Force(%f, %f)", x(), y());
     }
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Force force = (Force) o;
         return Double.compare(x, force.x) == 0 && Double.compare(y, force.y) == 0;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
-    }
 }
 
