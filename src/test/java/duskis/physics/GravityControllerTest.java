@@ -22,7 +22,19 @@ class GravityControllerTest {
         JLabel angle = mock();
         JLabel magnitude = mock();
 
-        GravityController controller = new GravityController(gravityComponent, xfield, yfield, timefield, apexfield, forceX, forceY, time, apex, angle, magnitude);
+        GravityController controller = new GravityController(
+                gravityComponent,
+                xfield,
+                yfield,
+                timefield,
+                apexfield,
+                forceX,
+                forceY,
+                time,
+                apex,
+                angle,
+                magnitude
+        );
 
         controller.updateForce(7, 5);
 
@@ -46,7 +58,19 @@ class GravityControllerTest {
         JLabel angle = mock();
         JLabel magnitude = mock();
 
-        GravityController controller = new GravityController(gravityComponent, xfield, yfield, timefield, apexfield, forceX, forceY, time, apex, angle, magnitude);
+        GravityController controller = new GravityController(
+                gravityComponent,
+                xfield,
+                yfield,
+                timefield,
+                apexfield,
+                forceX,
+                forceY,
+                time,
+                apex,
+                angle,
+                magnitude
+        );
 
         controller.updateButtonInput(7, 5, 5);
 
@@ -69,8 +93,19 @@ class GravityControllerTest {
         JLabel angle = mock();
         JLabel magnitude = mock();
 
-        GravityController controller = new GravityController(gravityComponent, xfield, yfield, timefield, apexfield, forceX, forceY, time, apex, angle, magnitude);
-
+        GravityController controller = new GravityController(
+                gravityComponent,
+                xfield,
+                yfield,
+                timefield,
+                apexfield,
+                forceX,
+                forceY,
+                time,
+                apex,
+                angle,
+                magnitude
+        );
         controller.updateForce(7, 5);
 
         verify(gravityComponent).setForce(new Force(7, 5));

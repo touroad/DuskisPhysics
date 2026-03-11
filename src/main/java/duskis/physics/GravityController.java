@@ -47,7 +47,7 @@ public class GravityController {
         xfield.setText(String.valueOf(x));
         yfield.setText(String.valueOf(y));
         Projectile temp = new Projectile(0, 0, new Force(x, y));
-        apexfield.setText(String.format("%.2f", temp.getApexX()) + ", " + String.format("%.2f", temp.getApexY()));  //definitly need to format this, apex numbers are longg
+        apexfield.setText(String.format("%.2f", temp.getApexX()) + ", " + String.format("%.2f", temp.getApexY()));
     }
 
     public void updateButtonInput(double x, double y, double time) {
