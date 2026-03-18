@@ -86,14 +86,12 @@ public class GravityFrame extends JFrame {
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         add(forceX, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
-        constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         add(xfield, constraints);
 
